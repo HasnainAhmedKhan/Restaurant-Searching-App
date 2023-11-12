@@ -11,17 +11,17 @@ const ResultList = ({title, results, navigation}) => {
         <View style={styles.container}>
             <Text style={styles.title}>{title}</Text>
             <FlatList 
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            data={results}
-            keyExtractor={result => result.id}
-            renderItem={({item}) => {
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                    data={results}
+                    keyExtractor={result => result.id}
+                    renderItem={({item}) => {
                 return (
                     <TouchableOpacity
                         onPress={() => navigation.navigate('ResultsShow',{id: item.id})}>
                          <ResultsDetail result={item} />
                     </TouchableOpacity>
-                      )
+                  )
             }}
             />
         </View>
